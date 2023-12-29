@@ -1,0 +1,8 @@
+#MacOS specific files
+.DS_Store
+
+#Local files
+build
+node_modules
+.vscode
+**/*.log

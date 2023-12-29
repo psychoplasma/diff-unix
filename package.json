@@ -1,0 +1,36 @@
+{
+  "name": "take-home-2023-psychoplasma",
+  "version": "1.0.0",
+  "description": "Planetarium preliminary task",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc --build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint '**/*.js' --ignore-path .gitignore && npx prettier '**/*.{json,md}' --check --ignore-path .gitignore",
+    "lint:fix": "npx eslint '**/*.js' --fix --ignore-path .gitignore && npx prettier '**/*.{json,md}' --write --ignore-path .gitignore"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planetarium/take-home-2023-psychoplasma.git"
+  },
+  "keywords": [
+    "diff",
+    "diffunix"
+  ],
+  "author": "Mustafa Morca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/planetarium/take-home-2023-psychoplasma/issues"
+  },
+  "homepage": "https://github.com/planetarium/take-home-2023-psychoplasma#readme",
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.2",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
+  }
+}
