@@ -15,13 +15,10 @@ import { diffLines } from 'planetarium-diff';
     return;
   };
 
-  let lineCount = 0;
   // Parse diff and write it to stdout
   for (const diff of diffs) {
     const lines = diff.value?.split('\n');
     const editSymbol = diff.added ? '++  ' : diff.removed ? '--  ' : undefined;
-    const start = lineCount;
-    lineCount += diff.count;
 
     // Skip no-change components
     if (editSymbol === undefined) {
@@ -30,7 +27,6 @@ import { diffLines } from 'planetarium-diff';
 
     const reconstructed = lines?.reduce((acc, line) => acc + '\n' + editSymbol + line, '');
 
-    process.stdout.write(`\n${start},${lineCount}`);
     process.stdout.write(reconstructed as string);
   }
 
