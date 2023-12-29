@@ -17,7 +17,7 @@ cd ./lib
 
 npm install
 
-npm build
+npm run build
 
 # build main project
 # change dir to the root directory of the main project
@@ -28,10 +28,10 @@ npm install
 # link planetarium-diff package locally
 npm link planetarium-diff
 
-npm build
+npm run build
 
 # file1 and file2 are the files to be diffed
-npm node dist/src/index.js path/to/file1 path/to/file2
+node dist/src/index.js path/to/file1 path/to/file2
 ```
 
 The npm package can be also uploaded and published in NPM registry by running `npm login` and `npm publish` commands in `./lib` directory.
@@ -127,4 +127,5 @@ Then the difference would be printed as follows
 ++  important new additions
 ++  to this document.
 ```
+
 The lines starting `++` would be the lines added/changed and the lines starting with `--` would be the line removed/changed.

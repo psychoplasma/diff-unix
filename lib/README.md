@@ -16,7 +16,7 @@ cd package/root/dir
 
 npm install
 
-npm build
+npm run build
 ```
 
 ## Running tests
