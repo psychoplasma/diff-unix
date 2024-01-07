@@ -1,8 +1,8 @@
-# take-home-2023-psychoplasma
+# diff-unix
 
 A simple `cli` program that diffs the contents of the two given files and prints out the changes on `stdout`.
 
-## Prequities
+## Prerequisites
 
 ```bash
 node >= 18.19.0
@@ -42,12 +42,54 @@ node build/src/index.js path/to/file1 path/to/file2
 # Build the docker image
 docker build -t diff-unix .
 
-# Run
+# Run with the default test files
 docker run -ti --rm diff-unix
+
+# Run with the specified input files by mounting a volume
+docker run -v local/path/to/test/files:/test -ti --rm diff-unix /test/file1.txt /test/file2.txt
 ```
+
+#### Docker example with specified input files
+
+```bash
+@user1~ cd ~ && mkdir test_files
+
+# Create a test file
+@user1~ vi ./test_files/test1.dat
+> test is an important matter
+> it should be taken seriously
+> 
+> Sincerely, bye!
+
+# Crete another test file
+@user1~ vi ./test_files/test2.dat
+> test is important matter
+> it should be taken seriously
+>
+> Sincerely, bye!
+>
+> PS: This is not a joke
+
+@user1~ pwd
+> /home/user1/
+
+# Run the container with the test files created above
+@user1~ docker run  -v /home/user1/test_files:/test -ti --rm diff-unix /test/test1.dat /test/test2.dat
+> --  test is an important matter
+> --
+> ++  test is important matter
+> ++
+> ++
+> ++  PS: This is not a joke
+> ++
+```
+
+## Publishing on NPM
 
 The npm package can be also uploaded and published in NPM registry by running `npm login` and `npm publish` commands in `./lib` directory.
 If you pushlish the package you must install the package by `npm install -s <package name>` and skip linking part above.
+
+## Example ouptut for given input
 
 Example `file1` content
 
