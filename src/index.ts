@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs';
-import { diffLines } from 'planetarium-diff';
+import { diffLines } from 'diff-unix';
 
 (() => {
   // Read files contents

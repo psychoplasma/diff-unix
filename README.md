@@ -11,8 +11,10 @@ npm >= 10.2.5
 
 ## Building & Running
 
+### Locally
+
 ```bash
-# build planetarium-diff package
+# build diff-unix package
 cd ./lib
 
 npm install
@@ -25,13 +27,23 @@ cd ../
 
 npm install
 
-# link planetarium-diff package locally
-npm link planetarium-diff
+# link diff-unix package locally
+npm link diff-unix
 
 npm run build
 
 # file1 and file2 are the files to be diffed
-node dist/src/index.js path/to/file1 path/to/file2
+node build/src/index.js path/to/file1 path/to/file2
+```
+
+### By using Docker
+
+```bash
+# Build the docker image
+docker build -t diff-unix .
+
+# Run
+docker run -ti --rm diff-unix
 ```
 
 The npm package can be also uploaded and published in NPM registry by running `npm login` and `npm publish` commands in `./lib` directory.

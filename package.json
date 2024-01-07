@@ -1,13 +1,8 @@
 {
-  "name": "take-home-2023-psychoplasma",
+  "name": "diff-unix",
   "version": "1.0.0",
-  "description": "Preliminary task",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "description": "Preliminary task given by Planetarium, a command line tool takes two files as input and diffs the content",
+  "main": "./build/index.js",
   "scripts": {
     "build": "npx tsc --build",
     "lint": "npx eslint '**/*.ts' --ignore-path .gitignore && npx prettier '**/*.{json,md}' --check --ignore-path .gitignore",
@@ -15,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/planetarium/take-home-2023-psychoplasma.git"
+    "url": "git+https://github.com/psychoplasma/diff-unix.git"
   },
   "author": "Mustafa Morca",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/planetarium/take-home-2023-psychoplasma/issues"
+    "url": "https://github.com/psychoplasma/diff-unix/issues"
   },
-  "homepage": "https://github.com/planetarium/take-home-2023-psychoplasma#readme",
+  "homepage": "https://github.com/psychoplasma/diff-unix#readme",
   "devDependencies": {
     "@types/node": "^20.10.5",
     "@typescript-eslint/eslint-plugin": "^6.16.0",
