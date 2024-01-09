@@ -173,11 +173,8 @@ Then the difference would be printed as follows
 --
 --
 --  check this dokument. On
---
 ++  check this document. On
 ++
---  be added after it.
-++  be added after it.
 ++
 ++  This paragraph contains
 ++  important new additions
