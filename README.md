@@ -21,6 +21,8 @@ npm install
 
 npm run build
 
+npm link
+
 # build main project
 # change dir to the root directory of the main project
 cd ../
