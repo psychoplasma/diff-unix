@@ -12,21 +12,11 @@ interface Path {
   lastComponent: Component | undefined;
 };
 
-export interface Options {
-  maxEditLength?: number;
-  ignoreCase?: boolean;
-  ignoreWhitespace?: boolean;
-  newlineIsToken?: boolean;
-  stripTrailingCr?: boolean;
-}
-
 export default class Diff {
-  options: Options = {};
   useLongestToken: boolean = true;
 
-  diff (oldString, newString, options: Options = {}): Array<Component> | undefined {
-    this.options = options;
-
+  diff (oldString, newString): Array<Component> | undefined {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     const self = this;
 
     oldString = this.removeEmpty(this.tokenize(oldString));
@@ -35,10 +25,7 @@ export default class Diff {
     const newLen = newString.length;
     const oldLen = oldString.length;
     let editLength = 1;
-    let maxEditLength = newLen + oldLen;
-    if (options.maxEditLength) {
-      maxEditLength = Math.min(maxEditLength, options.maxEditLength);
-    }
+    const maxEditLength = newString.length + oldString.length;
 
     const bestPath: Array<Path> = [{ oldPos: -1, lastComponent: undefined }];
 
@@ -162,8 +149,7 @@ export default class Diff {
   }
 
   equals (left, right) {
-    return left === right
-      || (this.options.ignoreCase && left.toLowerCase() === right.toLowerCase());
+    return left === right;
   }
 
   removeEmpty (array: []) {
